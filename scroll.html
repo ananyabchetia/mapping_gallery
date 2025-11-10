@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map exhibition</title>
+    <style>
+        :root {
+            --primary: #d946ef;
+            --secondary: #6d28d9;
+            --text: #1f2937;
+            --background: #ffffff;
+            --light-bg: #f9fafb;
+            --accent: #f59e0b;
+            --caption: #6b7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--background);
+            font-size: 16px;
+            margin: 0 auto;
+            max-width: 1400px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+
+        header {
+            background-color: #fff;
+            text-align: center;
+            padding: 3rem 0 0 0;
+        }
+
+        .header-category {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin: 0 auto 1.5rem;
+            max-width: 900px;
+            color: #000;
+            padding-top: 1.5rem;
+            font-style: arial;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #333;
+            margin: 0 auto 2rem;
+            max-width: 700px;
+        }
+
+        .byline {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+
+        .header-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+
+        .intro {
+            padding: 6rem 0;
+        }
+
+        .intro-text {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+
+        .data-section {
+            padding: 4rem 0;
+            background-color: var(--light-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .graph-box {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        .graph-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .graph-placeholder {
+            width: 100%;
+            background-color: #e5e7eb;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--caption);
+        }
+
+        .data-insights {
+            line-height: 1.7;
+        }
+
+        .data-intro {
+            color: var(--secondary);
+        }
+
+        @media (max-width: 768px) {
+            .data-section [style*="display: flex"] {
+                flex-direction: column;
+            }
+        }
+
+
+        .map-categories {
+            padding: 5rem 0;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .category-section {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 2rem;
+        }
+
+        .category-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .category-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--text);
+        }
+
+        .category-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .category-map {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .map-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .category-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            flex: 1;
+            padding: 1rem;
+            background-color: var(--light-bg);
+            border-radius: 8px;
+            margin: 0 0.5rem;
+        }
+
+        .language {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.0rem;
+            color: var(--caption);
+        }
+    </style>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <div class="container" style="padding-top: 1rem; padding-bottom: 0.5rem;">
+            <h1 class="title">My mapping gallery</h1>
+            <p class="subtitle" style="margin-bottom: 0rem;">Portfolio of maps I've made throughout my career</p>
+        </div>
+        <div class="container" style="padding-top: 0.75rem;">
+            <p class="byline">
+                By <a href="https://ananyabchetia.github.io/" target="_blank">Ananya Chetia</a>
+            </p>
+        </div>
+
+    </header>
+    <section class="map-categories">
+        <div class="container">
+
+            <div class="category-section">
+
+                <h3 class="category-title" style="color: var(--men);">Analyzing which states are waiting on disabality
+                    benefits, using R</h3>
+                <div class="category-content">
+                    <div class="category-map">
+                        <iframe title="The Real Page Turners, Please Stand Up" aria-label="Bar Chart"
+                            id="datawrapper-chart-MLQxw" src="/disability/map_template.html" scrolling="no"
+                            frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="650"
+                            data-external="1">
+                        </iframe>
+                    </div>
+                    <div class="category-text">
+                        <p>Social Security Adminstration offices throughout the country approve or disaprove of
+                            disability claims called
+                            Supplemental Security Income (SSI) or Social Security Disability Insurance United States
+                            SSDI. I looked into the
+                            number of pending cases for SSI and SSDI in Febuary.</p>
+                        <p>
+                            I used a
+                            <a href="https://www.r-bloggers.com/2015/05/geojson-hexagonal-statebins-in-r/"
+                                target="_blank">
+                                U.S GeoJSON shape file
+                            </a>
+                            to make this map.
+                        </p>
+                        <p>I then merged the shape file with a <a
+                                href="https://www.ssa.gov/disability/data/ssa-sa-mowl.htm" target="_blanl">dataset</a>
+                            on pending disablity cases on R Studio.</p>
+                        <p>The skeleton of the map was made using ggplot. I then made it responsive using ai2html.</p>
+                        <p> The map and my analysis showed that Texas had the highest number of pending cases.</p>
+                        <div class="category-stats">
+                            <div class="stat-item">
+                                <span class="language" style="color: var(--men);">Pandas (Python) </span>
+                                <span class="language" style="color: var(--men);">dplyr (R)</span>
+                                <span class="language" style="color: var(--men);">ggplot (R)</span>
+                                <span class="stat-label">Analysis tools</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="language" style="color: var(--men);">Adobe Illustrator</span>
+                                <span class="language" style="color: var(--men);">GeoJSON</span>
+                                <span class="language" style="color: var(--men);">ggplot (R)</span>
+                                <span class="stat-label">Visual tools</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="category-section">
+                <h3 class="category-title" style="color: var(--women);">NYC Jails are sitting on a landfill that's
+                    sinking</h3>
+                <div class="category-content">
+                    <div class="category-map">
+                        <iframe title="The Real Page Turners, Please Stand Up" aria-label="Bar Chart"
+                            id="datawrapper-chart-MLQxw" src="/riker's_island_full/nyc.html" scrolling="no"
+                            frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="650"
+                            data-external="1">
+                        </iframe>
+                    </div>
+                    <div class="category-text">
+                        <p>My master's thesis looked into how inmates are harmed by the air pollution and heat on
+                            Rikers, a 413 acre island housing eight active carceral facilities. </p>
+                        <p>The island suffers from pollution (I have the latest data on this via public records) and
+                            because it was built on a landfill, it is sinking at a faster rate than most of NYC.</p>
+                        <p>I made this map using NASA's InSAR data. I then visualized the data on QGIS, cleaned it on
+                            Adobe Illustrator and made it responsive using ai2html.</p>
+                        <div class="category-stats">
+                            <div class="stat-item">
+                                <span class="language" style="color: var(--women);">InSAR</span>
+                                <span class="language" style="color: var(--women);">R</span>
+                                <span class="stat-label">Analysis tools</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="language" style="color: var(--women);">QGIS</span>
+                                <span class="language" style="color: var(--women);">Adobe Illustrator</span>
+                                <span class="stat-label">Visual tools</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="data-section" style="background-color: #ffffff; padding: 4rem 0;">
+                <div class="container">
+                    <div style="margin-bottom: 4rem;">
+                        <div class="data-insights" style="max-width: 900px; margin: 0 auto;">
+                        </div>
+                        <h3 class="category-title" style="color: var(--men);">Primary NYC mayoral election map</h3>
+                        <iframe src="mayoral/ai2html-output/template.html" id="street-map-iframe" scrolling="no"
+                            frameborder="0" style="width: 100%; height: 1000px; border: none;">
+                        </iframe>
+
+                        <div class="data-insights" style="max-width: 900px; margin: 0 auto;">
+                        </div>
+                    </div>
+                    <p>The layout of this mapping gallery was inspired by data journalist Anusha Subramanian. Find her
+                        <a href="https://anusha0712.github.io/nyc-streetnames/">story</a> here.
+                    </p>
+            </section>
+
+        </div>
+    </section>
+
+</body>
+
+</html>
