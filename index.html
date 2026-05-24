@@ -1,224 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Graphic Wall — Ananya Chetia</title>
-    <link rel="icon" type="images/png" href="maps.png">
+    <link rel="icon" type="images/png" href="maps.png" />
     <style>
-        p {
-            text-align: center;
-            font-size: 1.3rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0.5rem auto 1rem auto;
-        }
+      p {
+        text-align: center;
+        font-size: 1.3rem;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0.5rem auto 1rem auto;
+      }
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 2rem;
-            background: #fafafa;
-            color: #333;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 2rem;
+        background: #fafafa;
+        color: #333;
+      }
 
-        h1 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.0rem;
-        }
+      h1 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+      }
 
-        .grid {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+      .grid {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
+      .grid-item {
+        width: calc(33.333% - 16px);
+        margin-bottom: 1.6rem;
+      }
+
+      @media (max-width: 900px) {
         .grid-item {
-            width: calc(33.333% - 16px);
-            margin-bottom: 1.6rem;
+          width: calc(50% - 16px);
         }
+      }
 
-        @media (max-width: 900px) {
-            .grid-item {
-                width: calc(50% - 16px);
-            }
+      @media (max-width: 600px) {
+        .grid-item {
+          width: 100%;
         }
+      }
 
-        @media (max-width: 600px) {
-            .grid-item {
-                width: 100%;
-            }
-        }
+      .card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+        width: 100%;
+        box-sizing: border-box;
+      }
 
-        .card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-            width: 100%;
-            box-sizing: border-box;
-        }
+      .card:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+      }
 
-        .card:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
-        }
+      .card.image-card {
+        padding: 0;
+      }
 
-        .card.image-card {
-            padding: 0;
-        }
+      .card.image-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
 
-        .card.image-card img {
-            display: block;
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
+      .chart-title {
+        font-size: 1.4rem;
+        margin: 0.5rem 0 0.2rem;
+        font-weight: bold;
+      }
 
-        .chart-title {
-            font-size: 1.4rem;
-            margin: 0.5rem 0 0.2rem;
-            font-weight: bold;
-        }
+      .chart-desc {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+        color: #555;
+      }
 
-        .chart-desc {
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            color: #555;
-        }
+      .chart-frame {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0.8rem;
+        border: none;
+      }
 
-        .chart-frame {
-            width: 100%;
-            height: auto;
-            margin-bottom: 0.8rem;
-            border: none;
-        }
-
-        .caption {
-            font-size: 0.85rem;
-            color: #666;
-            text-align: center;
-        }
+      .caption {
+        font-size: 0.85rem;
+        color: #666;
+        text-align: center;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <h1>My Graphic Gallery</h1>
     <p>Visualizing data with QGIS, Illustrator, ggplot and Datawrapper.</p>
 
     <div class="grid">
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/columbia.jpeg alt="Columbia University">
-            </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/columbia.jpeg" alt="Columbia University" />
         </div>
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/prediction-markets.png alt="prediction-markets">
-            </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/prediction-markets.png" alt="prediction-markets" />
         </div>
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/bubble-chart.jpg alt="bubble">
-            </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/bubble-chart.jpg" alt="bubble" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/rikers.png" alt="rikers" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/waffle.jpg" alt="waffle" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/circular.png" alt="circular" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/area_chart.png" alt="area" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/beeswarm.jpg" alt="beeswarm" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/usa.png" alt="usa-map" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/disability.png" alt="disability" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/ukraine.png" alt="ukraine" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/trees.png" alt="trees" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/minnesota.png" alt="Minnesota" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/nyt_poll.jpg" alt="nytpoll" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/passport.jpg" alt="passport" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/poll.jpg" alt="Polling" />
+        </div>
+      </div>
+      <div class="grid-item">
+        <div class="card image-card">
+          <img src="images/young_voters.jpg" alt="voting" />
+        </div>
+      </div>
     </div>
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/rikers.png alt="rikers">
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/waffle.jpg alt="waffle">
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/circular.png alt="circular">
-            </div>
-        </div>
-          <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/area_chart.png alt="area">
-            </div>
-        </div>
-            <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/beeswarm.jpg alt="beeswarm">
-            </div>
-        </div>
-   </div>
-            <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/usa.png alt="usa-map">
-            </div>
-        </div>
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/disability.png alt="disability">
-            </div>
-        </div>
+    <!-- /.grid -->
 
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/ukraine.png alt="ukraine">
-            </div>
-        </div>
-
-            <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/trees.png alt="trees">
-            </div>
-        </div>
-
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/minnesota.png alt="Minnesota">
-            </div>
-        </div>
-
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/nyt_poll.jpg alt="nytpoll">
-            </div>
-        </div>
-
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/passport.jpg alt="passport">
-            </div>
-        </div>
-
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/poll.jpg alt="Polling">
-            </div>
-        </div>
-
-        <div class="grid-item">
-            <div class="card image-card">
-                <img src=images/young_voters.jpg alt="voting">
-            </div>
-        </div>
-
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
-        <script>
-            // Initialize Masonry after page load
-            window.addEventListener('load', function () {
-                var grid = document.querySelector('.grid');
-                var msnry = new Masonry(grid, {
-                    itemSelector: '.grid-item',
-                    columnWidth: '.grid-item',
-                    percentPosition: true,
-                    gutter: 16
-                });
-            });
-        </script>
-
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js"></script>
+    <script>
+      window.addEventListener("load", function () {
+        var grid = document.querySelector(".grid");
+        var msnry = new Masonry(grid, {
+          itemSelector: ".grid-item",
+          columnWidth: ".grid-item",
+          percentPosition: true,
+          gutter: 16,
+        });
+      });
+    </script>
+  </body>
 </html>
